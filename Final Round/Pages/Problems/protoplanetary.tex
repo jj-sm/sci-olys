@@ -1,0 +1,125 @@
+\section{Resolviendo un Disco Protoplanetario con ALMA (40 Puntos)}
+
+El \textbf{Atacama Large Millimeter/submillimeter Array (ALMA)} es un interferómetro de radio que opera a longitudes de onda milimétricas. La capacidad de ALMA para resolver estructuras pequeñas lo convierte en una herramienta fundamental para estudiar los discos protoplanetarios.
+
+La \textbf{resolución angular mínima} ($\theta_{\text{min}}$) de un interferómetro se rige por el límite de difracción, relacionado con la longitud de onda ($\lambda$) y la línea de base máxima ($B_{\text{max}}$) (separación máxima entre antenas):
+$$\theta_{\text{min}} \approx 1.22 \frac{\lambda}{B_{\text{max}}}$$
+
+En radioastronomía, la intensidad de la radiación se relaciona con la \textbf{Temperatura de Brillo ($T_B$)} a través de la Ley de Rayleigh-Jeans, una aproximación válida a bajas frecuencias:
+$$I_{\nu}(T_B) \approx \frac{2 \nu^2 k_B T_B}{c^2}$$
+
+El flujo total observado ($F_\nu$) de una fuente resuelta es $F_\nu = I_\nu \cdot \Omega_{\text{disk}}$, donde $\Omega_{\text{disk}}$ es el ángulo sólido subtendido por la fuente.
+
+\textbf{Datos para el Problema:}
+\begin{itemize}
+    \item Longitud de onda de observación: $\lambda = 0.87 \, \text{mm}$.
+    \item Línea de base máxima de ALMA: $B_{\text{max}} = 16.2 \, \text{km}$.
+    \item Distancia al disco protoplanetario: $D = 140 \, \text{pc}$.
+    \item Flujo observado total: $F_\nu = 3.5 \times 10^{-19} \, \text{W}/\text{m}^2/\text{Hz}$.
+    \item Radio medido del disco: $R_{\text{disk}} = 50 \, \text{AU}$.
+    \item Velocidad de la Luz: $c \approx 3.00 \times 10^8 \, \text{m}/\text{s}$.
+    \item Constante de Boltzmann: $k_B \approx 1.38 \times 10^{-23} \, \text{J}/\text{K}$.
+    \item Conversiones: $1 \, \text{arcsec} \approx 4.85 \times 10^{-6} \, \text{rad}$. $1 \, \text{AU} \approx 1.50 \times 10^{11} \, \text{m}$.
+    \item Fórmulas de Geometría Angular: $\theta_{\text{rad}} = \text{Radio}/ \text{Distancia}$, $\Omega \approx \pi (\theta_{\text{rad}})^2$.
+\end{itemize}
+
+\subsection*{Sección A: Resolución del Telescopio (15 min)}
+
+\begin{enumerate}[label=(\alph*)]
+    \item Calcule la frecuencia ($\nu$) de observación en $\text{GHz}$. \marginnote{\textbf{(4pt)}}
+
+\begin{solution}
+La relación entre frecuencia y longitud de onda es $\nu = c/\lambda$.
+
+$$\nu = \frac{3.00 \times 10^8 \, \text{m}/\text{s}}{0.87 \times 10^{-3} \, \text{m}} \approx 3.448 \times 10^{11} \, \text{Hz}$$
+
+Convirtiendo a $\text{GHz}$ ($1 \, \text{GHz} = 10^9 \, \text{Hz}$):
+$$\nu \approx \mathbf{344.8 \, \text{GHz}}$$
+\end{solution}
+
+    \item Calcule la resolución angular mínima ($\theta_{\text{min}}$) de ALMA en radianes ($\text{rad}$). \marginnote{\textbf{(4pt)}}
+
+\begin{solution}
+$$\theta_{\text{min}} \approx 1.22 \frac{\lambda}{B_{\text{max}}} = 1.22 \frac{0.87 \times 10^{-3} \, \text{m}}{16.2 \times 10^3 \, \text{m}}$$
+$$\theta_{\text{min}} \approx 6.55 \times 10^{-8} \, \text{rad}$$
+$$\theta_{\text{min}} \approx \mathbf{6.55 \times 10^{-8} \, \text{rad}}$$
+\end{solution}
+
+    \item Exprese la resolución angular $\theta_{\text{min}}$ en $\text{miliarcsegundos}$ ($\text{mas}$). \marginnote{\textbf{(4pt)}}
+
+\begin{solution}
+Usando $1 \, \text{arcsec} \approx 4.85 \times 10^{-6} \, \text{rad}$:
+$$\theta_{\text{min}} \approx 6.55 \times 10^{-8} \, \text{rad} \cdot \frac{1 \, \text{arcsec}}{4.85 \times 10^{-6} \, \text{rad}} \approx 0.0135 \, \text{arcsec}$$
+
+Convirtiendo a $\text{miliarcsegundos}$:
+$$\theta_{\text{min}} \approx 0.0135 \times 1000 \, \text{mas} = \mathbf{13.5 \, \text{mas}}$$
+\end{solution}
+
+    \item Calcule la resolución lineal (tamaño físico mínimo, $L_{\text{min}}$) que ALMA puede distinguir a la distancia $D$ del disco, en $\text{AU}$. \marginnote{\textbf{(3pt)}}
+
+\begin{solution}
+La resolución lineal es $L_{\text{min}} = D \cdot \theta_{\text{min}}$ (con $\theta_{\text{min}}$ en radianes).
+
+$$L_{\text{min}} = (140 \, \text{pc}) \cdot (6.55 \times 10^{-8} \, \text{rad}) \approx 9.17 \times 10^{-6} \, \text{pc}$$
+
+Convirtiendo a $\text{AU}$ ($1 \, \text{pc} \approx 206265 \, \text{AU}$):
+$$L_{\text{min}} \approx 9.17 \times 10^{-6} \, \text{pc} \cdot 206265 \, \text{AU}/\text{pc}$$
+$$L_{\text{min}} \approx \mathbf{1.89 \, \text{AU}}$$
+\end{solution}
+
+\subsection*{Sección B: Geometría y Ángulo Sólido (10 min)}
+
+\begin{enumerate}[resume, label=(\alph*)]
+    \item Calcule la distancia al disco ($D$) en metros. \marginnote{\textbf{(3pt)}}
+
+\begin{solution}
+$$D = 140 \, \text{pc} \cdot \frac{3.086 \times 10^{16} \, \text{m}}{1 \, \text{pc}} \approx \mathbf{4.32 \times 10^{18} \, \text{m}}$$
+(Usando la conversión exacta $1 \, \text{pc} \approx 3.086 \times 10^{16} \, \text{m}$ para mayor precisión).
+\end{solution}
+
+    \item Calcule el ángulo sólido subtendido por el disco ($\Omega_{\text{disk}}$) en $\text{estereoradianes}$ ($\text{sr}$). \marginnote{\textbf{(4pt)}}
+
+\begin{solution}
+El radio del disco en metros es $R_{\text{disk}} = 50 \, \text{AU} \cdot 1.50 \times 10^{11} \, \text{m}/\text{AU} = 7.50 \times 10^{12} \, \text{m}$.
+
+El radio angular es $\theta_{\text{disk}} = R_{\text{disk}}/D$.
+$$\theta_{\text{disk}} = \frac{7.50 \times 10^{12} \, \text{m}}{4.32 \times 10^{18} \, \text{m}} \approx 1.736 \times 10^{-6} \, \text{rad}$$
+
+El ángulo sólido para un disco es $\Omega_{\text{disk}} \approx \pi (\theta_{\text{disk}})^2$.
+$$\Omega_{\text{disk}} \approx \pi (1.736 \times 10^{-6})^2 \approx 9.47 \times 10^{-12} \, \text{sr}$$
+$$\Omega_{\text{disk}} \approx \mathbf{9.47 \times 10^{-12} \, \text{sr}}$$
+\end{solution}
+
+    \item Calcule la Intensidad de Brillo ($I_\nu$) del disco en $\text{W}/\text{m}^2/\text{Hz}/\text{sr}$. \marginnote{\textbf{(3pt)}}
+
+\begin{solution}
+$$I_{\nu} = \frac{F_{\nu}}{\Omega_{\text{disk}}} = \frac{3.5 \times 10^{-19} \, \text{W}/\text{m}^2/\text{Hz}}{9.47 \times 10^{-12} \, \text{sr}}$$
+$$I_{\nu} \approx 3.696 \times 10^{-8} \, \text{W}/\text{m}^2/\text{Hz}/\text{sr}$$
+$$I_{\nu} \approx \mathbf{3.70 \times 10^{-8} \, \text{W}/\text{m}^2/\text{Hz}/\text{sr}}$$
+\end{solution}
+
+\subsection*{Sección C: Propiedades Físicas (15 min)}
+
+\begin{enumerate}[resume, label=(\alph*)]
+    \item Utilizando la Ley de Rayleigh-Jeans, calcule la \textbf{Temperatura de Brillo} ($T_B$) del disco en $\text{K}$. \marginnote{\textbf{(7pt)}}
+
+\begin{solution}
+Despejando $T_B$:
+$$T_B = \frac{I_{\nu} c^2}{2 \nu^2 k_B}$$
+
+Sustituyendo los valores:
+$$T_B = \frac{(3.696 \times 10^{-8}) \cdot (3.00 \times 10^8)^2}{2 \cdot (3.448 \times 10^{11})^2 \cdot (1.38 \times 10^{-23})}$$
+$$T_B = \frac{3.326 \times 10^{9}}{3.284 \times 10^{7}}$$
+$$T_B \approx 101.3 \, \text{K}$$
+$$T_B \approx \mathbf{101 \, \text{K}}$$
+\end{solution}
+
+    \item Con base en el resultado de (A.4), ¿ALMA opera en una configuración capaz de resolver un "gap" (vacío) de $10 \, \text{AU}$ de ancho en el disco? Justifique brevemente. \marginnote{\textbf{(3pt)}}
+
+\begin{solution}
+La resolución lineal mínima calculada en (A.4) es $L_{\text{min}} \approx 1.89 \, \text{AU}$.
+
+Dado que $L_{\text{min}}$ ($1.89 \, \text{AU}$) es **menor** que el tamaño del "gap" ($10 \, \text{AU}$), **sí**, ALMA en esta configuración tiene la capacidad de resolver el "gap" y observar la estructura fina del disco.
+\end{solution}
+
+\end{enumerate}

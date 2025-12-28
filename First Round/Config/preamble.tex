@@ -1,0 +1,103 @@
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx, tipa}
+\usepackage[
+	letterpaper,    % Paper size
+	top=0.5in,    % Top margin
+	bottom=2.2in, % Bottom margin
+	left=1in,   % Left margin
+	right=1in,  % Right margin
+	%showframe  % Uncomment to show frames around the margins for debugging purposes
+]{geometry}
+\usepackage{amsfonts, amsmath, amssymb}
+\usepackage{latexsym}
+\usepackage{adjustbox}
+\usepackage{longtable}
+\usepackage{charter} % Use the Charter font
+\usepackage{wasysym}
+\usepackage[euler]{textgreek}
+\usepackage{enumitem}
+\usepackage{multicol}
+\usepackage{array}
+\usepackage{marginnote}
+\usepackage{float}
+\usepackage{ragged2e}
+\usepackage[per-mode=symbol]{siunitx}
+
+% Undefine exam class headers/footers to avoid conflict with fancyhdr
+\let\lhead\undefined
+\let\chead\undefined
+\let\rhead\undefined
+\let\lfoot\undefined
+\let\cfoot\undefined
+\let\rfoot\undefined
+
+\usepackage{fancyhdr}
+\usepackage{comment}
+
+\pagestyle{fancy}
+\fancyhead{}
+\fancyhead[L]{\adjustbox{valign=M}{\includegraphics[height=1.6cm]{Photos/Logo OCAAA-8.jpeg}}} % Left image
+\fancyhead[R]{\adjustbox{valign=M}{\includegraphics[height=1cm]{Photos/logoUAN.png}}} % Right image
+\fancyhead[C]{\vspace{-35pt}\rule{\textwidth}{1pt} \vspace*{-0.3cm}\boxed{\textbf{PT-CLA-\the\year00}}}
+
+% Define the footer
+\fancyfoot{}
+\fancyfoot[C]{\vspace{-2em}\rule{\textwidth}{0.4pt}} % Horizontal line
+\fancyfoot[L]{}
+\fancyfoot[C]{\copyright\ \the\year \ - Olimpiada Colombiana de Astronomía, Astrofísica y Astronáutica. $|$ \LaTeX $\ \ |$ JJSM}
+\fancyfoot[R]{}
+
+% Adjusting the top margin and header height
+\setlength{\topmargin}{-15pt}
+\setlength{\headheight}{1.7cm}
+\setlength{\headsep}{1cm}
+
+\renewcommand{\headrulewidth}{0pt} % Remove the default horizontal line in header
+\renewcommand{\footrulewidth}{1pt} % Remove the default horizontal line in footer
+
+\usepackage{titlesec} 
+\titleformat{\section} % Redefine \section formatting
+  {\raggedright\Large\bfseries} % Left-aligned, large font, bold
+  {\thesection} % Include the section number (e.g., "11")
+  {0.5em} % Spacing between the number and title
+  {} % Title code (left blank for direct title)
+
+\parindent 0ex
+
+\DeclareSIUnit\parsec{pc}
+\DeclareSIUnit\au{au}
+\DeclareSIUnit\lightyear{ly}
+\DeclareSIUnit\jansky{Jy}
+\DeclareSIUnit\year{yr}
+\DeclareSIUnit\mag{mag}
+\newcommand{\msun}{\ensuremath{M_\odot}}
+\newcommand{\rsun}{\ensuremath{R_\odot}}
+\newcommand{\lsun}{\ensuremath{L_\odot}}
+\newcommand{\mearth}{\ensuremath{M_\oplus}}
+\newcommand{\rearth}{\ensuremath{R_\oplus}}
+\newcommand{\dearth}{\ensuremath{d_\oplus}}
+\newcommand{\aearth}{\ensuremath{a_\oplus}}
+\newcommand{\teff}{\ensuremath{T_\mathrm{eff}}}
+\newcommand{\kB}{\ensuremath{k_\text{B}}}
+\newcommand{\NA}{\ensuremath{N_\text{A}}}
+\newcommand{\Fsup}{\ensuremath{F_\text{sup}}}
+\newcommand{\dsup}{\ensuremath{d_\text{sup}}}
+\newcommand{\thetasub}[1]{\ensuremath{\theta_{\text{#1}}}}
+\newcommand{\mangle}[1]{\ensuremath{\measuredangle #1}}
+\newcommand{\me}{\mathrm{e}}
+\newcommand{\mi}{\mathrm{i}}
+\newcommand{\diff}{\mathrm{d}}
+\newcommand{\arc}[1]{{%
+  \setbox9=\hbox{#1}%
+  \ooalign{\resizebox{\wd9}{\height}{\texttoptiebar{\phantom{A}}}\cr#1}}}
+\renewcommand{\solutiontitle}{\noindent\textbf{Solución:}\par\noindent\raggedright}{\par}
+
+
+\CorrectChoiceEmphasis{\color{blue}\bfseries}
+\SolutionEmphasis{\color{blue}}
+
+\newenvironment{justifiedoneparchoices}{
+    \begin{minipage}{\textwidth}
+    \justifying
+    \begin{enumerate}[label=\alph*) , itemsep=0pt, left=0pt]
+}{\end{enumerate}\end{minipage}}

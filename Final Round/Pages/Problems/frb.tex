@@ -1,0 +1,112 @@
+\section{El Misterio del FRB Distante: Medición de Distancia por Dispersión (40 Puntos)}
+
+Los \textbf{Fast Radio Bursts (FRBs)}, o "ráfagas rápidas de radio", son pulsos de radio de duración de milisegundos que provienen de galaxias distantes. La característica clave para su estudio es la \textbf{medida de dispersión ($DM$)}, el retraso dependiente de la frecuencia que experimentan las ondas de radio al viajar a través del plasma. Las ondas de menor frecuencia son retardadas.
+
+El $DM$ es una medida de la densidad total de electrones libres a lo largo de la línea de visión, expresado en unidades de $\text{pc}/\text{cm}^3$:
+
+$$DM = \int_{0}^{D} n_e(l) dl$$
+
+donde $n_e$ es la densidad de electrones libres y $D$ es la distancia a la fuente.
+
+Para este problema, simplificaremos asumiendo que el $DM$ se debe principalmente al medio intergaláctico (IGM) y que la densidad electrónica promedio en el IGM es constante y uniforme ($\bar{n}_{e}$), con una contribución insignificante de otros medios.
+
+\textbf{Fórmulas y Datos Útiles:}
+
+\begin{itemize}
+    \item \textbf{Retraso de Dispersión ($\Delta t$):} Para dos frecuencias $f_1$ y $f_2$ ($f_1 > f_2$):
+    $$\Delta t = K \cdot DM \cdot \left( \frac{1}{f_2^2} - \frac{1}{f_1^2} \right)$$
+    \item \textbf{Constante de Dispersión:} $K \approx 4.149 \times 10^3 \, \text{s} \cdot \text{MHz}^2 / (\text{pc} \cdot \text{cm}^{-3})$.
+    \item \textbf{Densidad Electrónica Media del IGM:} $\bar{n}_e = 1.0 \times 10^{-7} \, \text{cm}^{-3}$.
+    \item \textbf{Velocidad de la Luz:} $c \approx 3.00 \times 10^5 \, \text{km}/\text{s}$.
+    \item \textbf{Constante de Hubble:} $H_0 \approx 70 \, \text{km}/\text{s}/\text{Mpc}$.
+    \item \textbf{Unidades de Distancia:} $1 \, \text{Mpc} = 10^6 \, \text{pc}$.
+    \item \textbf{Corrimiento al Rojo (no relativista):} $z \approx v/c$.
+\end{itemize}
+
+\subsection*{Sección A: Determinación del DM del FRB}
+
+Se ha detectado un FRB con los siguientes datos de llegada a dos frecuencias diferentes:
+
+\begin{center}
+\begin{tabular}{|c|c|}
+\hline
+ Frecuencia ($f$) & Tiempo de Llegada ($t$) \\
+\hline
+ $f_1 = 1500 \, \text{MHz}$ & $t_1 = 5.000 \, \text{ms}$ \\
+\hline
+ $f_2 = 1200 \, \text{MHz}$ & $t_2 = 5.381 \, \text{ms}$ \\
+\hline
+\end{tabular}
+\end{center}
+
+\begin{enumerate}[label=(\alph*)]
+    \item Calcule el retraso de tiempo $\Delta t$ (en segundos) entre las dos frecuencias. \marginnote{\textbf{(3pt)}}
+
+\begin{solution}
+El retraso de tiempo es $\Delta t = t_2 - t_1$.
+
+$$\Delta t = 5.381 \, \text{ms} - 5.000 \, \text{ms} = 0.381 \, \text{ms}$$
+
+Convirtiendo a segundos:
+$$\Delta t = 0.381 \times 10^{-3} \, \text{s} = \mathbf{3.81 \times 10^{-4} \, \text{s}}$$
+\end{solution}
+
+    \item Calcule el factor de frecuencia $\left( \frac{1}{f_2^2} - \frac{1}{f_1^2} \right)$ en unidades de $\text{MHz}^{-2}$. \marginnote{\textbf{(5pt)}}
+
+\begin{solution}
+$$\frac{1}{f_2^2} - \frac{1}{f_1^2} = \frac{1}{(1200)^2} - \frac{1}{(1500)^2} \, \text{MHz}^{-2}$$
+$$= \left(6.9444 \times 10^{-7} - 4.4444 \times 10^{-7}\right) \, \text{MHz}^{-2}$$
+$$= \mathbf{2.5000 \times 10^{-7} \, \text{MHz}^{-2}}$$
+\end{solution}
+
+    \item Utilizando la fórmula del retraso de dispersión, calcule la Medida de Dispersión ($DM$) de la ráfaga en unidades de $\text{pc}/\text{cm}^3$. \marginnote{\textbf{(12pt)}}
+
+\begin{solution}
+Despejando $DM$:
+$$DM = \frac{\Delta t}{K \cdot \left( \frac{1}{f_2^2} - \frac{1}{f_1^2} \right)}$$
+
+Sustituyendo los valores:
+$$\text{DM} = \frac{3.81 \times 10^{-4} \, \text{s}}{(4.149 \times 10^3 \, \text{s} \cdot \text{MHz}^2 / (\text{pc} \cdot \text{cm}^{-3})) \cdot (2.5000 \times 10^{-7} \, \text{MHz}^{-2})}$$
+$$\text{DM} = \frac{3.81 \times 10^{-4}}{1.03725 \times 10^{-3}} \, \text{pc}/\text{cm}^3$$
+$$\text{DM} \approx \mathbf{367.3 \, \text{pc}/\text{cm}^3}$$
+\end{solution}
+
+\subsection*{Sección B: Estimación de la Distancia}
+
+\begin{enumerate}[resume, label=(\alph*)]
+    \item Asumiendo una densidad de electrones libres $\bar{n}_e = 1.0 \times 10^{-7} \, \text{cm}^{-3}$ y un universo estático ($DM = \bar{n}_e \cdot D$), calcule la distancia $D$ al FRB en unidades de parsecs ($\text{pc}$). \marginnote{\textbf{(8pt)}}
+
+\begin{solution}
+$$D = \frac{DM}{\bar{n}_e} = \frac{367.3 \, \text{pc}/\text{cm}^3}{1.0 \times 10^{-7} \, \text{cm}^{-3}}$$
+$$D = 367.3 \times 10^7 \, \text{pc}$$
+$$D = \mathbf{3.673 \times 10^9 \, \text{pc}}$$
+\end{solution}
+
+    \item Convierta la distancia $D$ a **Megaparsecs ($\text{Mpc}$)** y use este valor para las siguientes partes. \marginnote{\textbf{(4pt)}}
+
+\begin{solution}
+$$D = \frac{3.673 \times 10^9 \, \text{pc}}{10^6 \, \text{pc}/\text{Mpc}}$$
+$$D = \mathbf{3673 \, \text{Mpc}}$$
+\end{solution}
+
+\subsection*{Sección C: Cosmología y Coherencia}
+
+\begin{enumerate}[resume, label=(\alph*)]
+    \item Utilizando la Ley de Hubble ($v = H_0 D$) y la distancia en $\text{Mpc}$, estime la velocidad de recesión ($v$) del FRB en $\text{km}/\text{s}$. \marginnote{\textbf{(5pt)}}
+
+\begin{solution}
+$$v = H_0 D = (70 \, \text{km}/\text{s}/\text{Mpc}) \cdot (3673 \, \text{Mpc})$$
+$$v = 257,110 \, \text{km}/\text{s}$$
+$$v \approx \mathbf{2.57 \times 10^5 \, \text{km}/\text{s}}$$
+\end{solution}
+
+    \item Calcule el corrimiento al rojo ($z$) del FRB. ¿Es apropiada la aproximación no relativista $z \approx v/c$ para esta ráfaga? Justifique brevemente. \marginnote{\textbf{(3pt)}}
+
+\begin{solution}
+$$z \approx \frac{v}{c} = \frac{257,110 \, \text{km}/\text{s}}{300,000 \, \text{km}/\text{s}}$$
+$$z \approx \mathbf{0.857}$$
+
+\textbf{Justificación:} La aproximación no relativista ($v \ll c$) \textbf{no} es estrictamente apropiada, ya que $v$ es aproximadamente el $86\%$ de $c$. Se requeriría una corrección relativista para un cálculo más preciso.
+\end{solution}
+
+\end{enumerate}

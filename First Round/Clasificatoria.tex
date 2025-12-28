@@ -1,0 +1,29 @@
+\documentclass[addpoints]{exam}
+
+% ============================== PRINT ANSWERS ==================================
+% When not commented, \printanswers will show all of the answers to questions
+%  and change some other things. Using this function, you can create both a 
+% key and test in the same document simply by uncommenting or commenting 
+% \printanswers
+\printanswers
+
+% ================================================================================
+\input{Config/preamble.tex}
+
+% ============================= BEGIN DOCUMENT ===================================
+\begin{document}
+
+% ============================= COVER ============================================
+\include{Pages/cover.tex}
+
+% ============================= FORM =============================================
+\include{Pages/form.tex}
+
+% ============================= PROBLEMS =========================================
+\pagenumbering{arabic}
+\input{Pages/Templates/Selección Múltiple}
+\input{Pages/Templates/Selección Múltiple 2}
+\input{Pages/Templates/Selección Múltiple 3}
+
+% ============================= END DOCUMENT =====================================
+\end{document}
