@@ -1,0 +1,52 @@
+name: Build and Release LaTeX PDFs
+
+on:
+  push:
+    tags:
+      - '*'
+
+jobs:
+  build_and_release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Compile First Round
+        uses: xu-cheng/latex-action@v3
+        with:
+          root_file: Clasificatoria.tex
+          working_directory: First Round/
+
+      - name: Compile Second Round
+        uses: xu-cheng/latex-action@v3
+        with:
+          root_file: Selectiva.tex
+          working_directory: Second Round/
+
+      - name: Compile Final Round
+        uses: xu-cheng/latex-action@v3
+        with:
+          root_file: "Final Round.tex"
+          working_directory: Final Round/
+
+      - name: Zip First Round Source
+        run: zip -r First_Round_Source.zip "First Round" -x "*.pdf" "*.log" "*.aux" "*.fdb_latexmk" "*.fls" "*.synctex.gz"
+
+      - name: Zip Second Round Source
+        run: zip -r Second_Round_Source.zip "Second Round" -x "*.pdf" "*.log" "*.aux" "*.fdb_latexmk" "*.fls" "*.synctex.gz"
+
+      - name: Zip Final Round Source
+        run: zip -r Final_Round_Source.zip "Final Round" -x "*.pdf" "*.log" "*.aux" "*.fdb_latexmk" "*.fls" "*.synctex.gz"
+
+      - name: Create Release
+        uses: softprops/action-gh-release@v1
+        if: startsWith(github.ref, 'refs/tags/')
+        with:
+          files: |
+            First Round/Clasificatoria.pdf
+            Second Round/Selectiva.pdf
+            Final Round/Final Round.pdf
+            First_Round_Source.zip
+            Second_Round_Source.zip
+            Final_Round_Source.zip
