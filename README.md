@@ -257,6 +257,15 @@ The repository includes example problems from professional olympiads:
 
 See `Pages/Problems/` for complete examples in each round.
 
+### Pre-compiled Examples
+
+The `Example PDFs/` directory contains pre-compiled PDFs for all three rounds:
+- `First Round.pdf` - Clasificatoria (Qualifying round)
+- `Second Round.pdf` - Selectiva (Selection round)
+- `Final Round.pdf` - Final round
+
+These demonstrate the expected output and formatting of the template.
+
 ## License
 
 This template is licensed under the [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License](LICENSE.md).
